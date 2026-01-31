@@ -1,0 +1,3 @@
+Contact: mailto:contact@baqc.bd
+Preferred-Languages: en, bn
+Policy: https://baqc.bd/.well-known/security.txt
