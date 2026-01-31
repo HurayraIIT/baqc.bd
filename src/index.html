@@ -1,13 +1,387 @@
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAQC - Bangladesh Aspiring QA Community</title>
+    <meta name="description" content="Join the Bangladesh Aspiring QA Community (BAQC). Building a Quality Future for Bangladesh through mentorship, workshops, and networking." />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-baqc-green: #006a4e;
+        --color-baqc-red: #f42a41;
+        --color-baqc-dark: #0f172a;
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+  <body class="font-sans antialiased text-slate-800 bg-white">
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="header">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center gap-2">
+            <!-- Brand -->
+            <a href="#" class="flex items-center gap-2">
+              <div class="w-10 h-10 bg-baqc-green rounded-full flex items-center justify-center text-white font-bold text-xl border-2 border-baqc-red">
+                B
+              </div>
+              <span class="font-bold text-2xl tracking-tighter text-baqc-green">BAQC<span class="text-baqc-red">.bd</span></span>
+            </a>
+          </div>
+          
+          <!-- Desktop Menu -->
+          <nav class="hidden md:flex space-x-8 items-center">
+            <a href="#home" class="text-gray-600 hover:text-baqc-green font-medium transition-colors">Home</a>
+            <a href="#workshops" class="text-gray-600 hover:text-baqc-green font-medium transition-colors">Workshops</a>
+            <a href="#about" class="text-gray-600 hover:text-baqc-green font-medium transition-colors">About</a>
+            <a href="#features" class="text-gray-600 hover:text-baqc-green font-medium transition-colors">What We Do</a>
+            <a href="https://chat.whatsapp.com/BkIdWkO5LF1K3GFlnY9sC6" target="_blank" class="px-5 py-2.5 rounded-full bg-baqc-green text-white font-medium hover:bg-green-800 transition-all shadow-md hover:shadow-lg">
+              Join Community
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-gray-600 hover:text-baqc-green focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+        <div class="px-4 pt-2 pb-6 space-y-1">
+          <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-baqc-green hover:bg-gray-50 rounded-md">Home</a>
+          <a href="#workshops" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-baqc-green hover:bg-gray-50 rounded-md">Workshops</a>
+          <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-baqc-green hover:bg-gray-50 rounded-md">About</a>
+          <a href="#features" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-baqc-green hover:bg-gray-50 rounded-md">What We Do</a>
+          <div class="pt-4">
+             <a href="https://chat.whatsapp.com/BkIdWkO5LF1K3GFlnY9sC6" target="_blank" class="block w-full text-center px-5 py-3 rounded-md bg-baqc-green text-white font-medium hover:bg-green-800">
+              Join Community
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute top-0 left-0 right-0 h-full bg-linear-to-b from-green-50/50 to-white -z-10"></div>
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-baqc-green/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 -left-24 w-72 h-72 bg-baqc-red/10 rounded-full blur-3xl"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-baqc-green text-sm font-semibold mb-6 border border-green-200">
+          <span class="w-2 h-2 rounded-full bg-baqc-red animate-pulse"></span>
+          Shaping the future of QA in Bangladesh
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-baqc-dark tracking-tight leading-tight mb-6">
+          Building a <span class="text-transparent bg-clip-text bg-linear-to-r from-baqc-green to-teal-600">Quality Future</span> for <span class="decoration-baqc-red decoration-4 underline underline-offset-4">Bangladesh</span>
+        </h1>
+        
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+          Join the largest community of QA professionals. Elevate your skills, network with industry experts, and lead the charge for software excellence.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-baqc-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 ring-4 ring-red-100">
+            <span>Register Now</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://chat.whatsapp.com/BkIdWkO5LF1K3GFlnY9sC6" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-baqc-green text-white text-lg font-bold rounded-lg shadow-lg hover:bg-green-800 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 ring-4 ring-green-100">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Join WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm sm:text-base font-medium text-gray-600">
+          <a href="https://www.linkedin.com/company/baqc" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group">
+            <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </span>
+            LinkedIn Page
+          </a>
+          <a href="https://www.linkedin.com/groups/15891061/" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group">
+            <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors">
+              <i class="fa-solid fa-users"></i>
+            </span>
+            LinkedIn Group
+          </a>
+          <a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group">
+            <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors">
+              <i class="fa-solid fa-file-shield"></i>
+            </span>
+            Community Guidelines
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Workshops -->
+    <section id="workshops" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-baqc-green font-bold tracking-wide uppercase text-sm mb-2">Learning & Growth</h2>
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900">Upcoming Workshops</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Workshop 1 -->
+          <div class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div class="bg-baqc-green/5 h-48 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-linear-to-tr from-baqc-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <i class="fa-solid fa-bug text-6xl text-baqc-green/20 group-hover:text-baqc-green/40 transition-colors transform group-hover:scale-110 duration-500"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-sm text-baqc-red font-semibold mb-3">
+                <i class="fa-regular fa-calendar"></i>
+                Feb 15, 2026 • 8:00 PM
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-baqc-green transition-colors">Advanced API Testing with Postman</h4>
+              <p class="text-gray-600 mb-6 text-sm">Master automated API testing workflows, environment variables, and CI/CD integration.</p>
+              <a href="#" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-baqc-green transition-colors">
+                Register for Free
+              </a>
+            </div>
+          </div>
+
+          <!-- Workshop 2 -->
+          <div class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div class="bg-blue-50 h-48 flex items-center justify-center relative overflow-hidden">
+               <div class="absolute inset-0 bg-linear-to-tr from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <i class="fa-solid fa-mobile-screen text-6xl text-blue-200 group-hover:text-blue-400 transition-colors transform group-hover:scale-110 duration-500"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-sm text-baqc-red font-semibold mb-3">
+                <i class="fa-regular fa-calendar"></i>
+                Mar 01, 2026 • 9:00 PM
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Mobile QA Automation</h4>
+              <p class="text-gray-600 mb-6 text-sm">Introduction to Appium for Android and iOS testing. Setup, locator strategies, and basic scripts.</p>
+              <a href="#" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                Register for Free
+              </a>
+            </div>
+          </div>
+
+          <!-- Workshop 3 -->
+          <div class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div class="bg-purple-50 h-48 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 bg-linear-to-tr from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <i class="fa-solid fa-shield-halved text-6xl text-purple-200 group-hover:text-purple-400 transition-colors transform group-hover:scale-110 duration-500"></i>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-sm text-baqc-red font-semibold mb-3">
+                <i class="fa-regular fa-calendar"></i>
+                Mar 15, 2026 • 8:00 PM
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">Security Testing Basics</h4>
+              <p class="text-gray-600 mb-6 text-sm">Learn the fundamentals of OWASP Top 10 and how to start with penetration testing safely.</p>
+              <a href="#" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-purple-600 transition-colors">
+                Register for Free
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+           <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+             <div>
+               <h4 class="text-xl font-bold text-gray-900 mb-2">Past Workshops & Resources</h4>
+               <p class="text-gray-600">Missed a session? Catch up with our recordings and slide decks.</p>
+             </div>
+             <a href="#" class="px-6 py-3 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:border-baqc-green hover:text-baqc-green transition-colors">
+               View Archive
+             </a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <!-- Decor -->
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-baqc-green/5 skew-x-12 transform origin-top-right"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-baqc-green font-bold tracking-wide uppercase text-sm mb-2">Who We Are</h2>
+            <h3 class="text-3xl lg:text-4xl font-bold mb-6">Empowering QA Professionals Across Bangladesh</h3>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6">
+              BAQC is a non-profit community initiative dedicated to raising the standard of software quality assurance in Bangladesh.
+            </p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+              We believe in the power of community-driven learning, sharing knowledge, and fostering a culture of excellence. Whether you are a fresh graduate or a seasoned expert, BAQC is your platform to grow.
+            </p>
+            
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check-circle text-baqc-green text-xl mt-1"></i>
+                <span class="text-gray-300">Share knowledge and best practices</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check-circle text-baqc-green text-xl mt-1"></i>
+                <span class="text-gray-300">Mentorship for aspiring QA engineers</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check-circle text-baqc-green text-xl mt-1"></i>
+                <span class="text-gray-300">Collaborate on open source projects</span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative">
+             <div class="absolute -inset-4 bg-baqc-red/20 rounded-2xl blur-lg rotate-3"></div>
+             <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team collaboration" class="relative rounded-2xl shadow-2xl border border-gray-700">
+             
+             <div class="absolute -bottom-6 -left-6 bg-baqc-white bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+               <div class="flex items-center gap-4 mb-2">
+                 <div class="text-4xl font-bold text-baqc-green">2k+</div>
+                 <div class="text-sm text-gray-600 font-medium">Community Members</div>
+               </div>
+               <div class="w-full bg-gray-200 rounded-full h-2">
+                 <div class="bg-baqc-green h-2 rounded-full" style="width: 85%"></div>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features / What We Do -->
+    <section id="features" class="py-20 bg-green-50/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-baqc-green font-bold tracking-wide uppercase text-sm mb-2">Our Activities</h2>
+          <h3 class="text-3xl lg:text-4xl font-bold text-gray-900">How We Make an Impact</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 group">
+            <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-baqc-green text-2xl mb-6 group-hover:bg-baqc-green group-hover:text-white transition-colors">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">Mentorship</h4>
+            <p class="text-gray-600">Guided paths for juniors from experienced industry leaders to bridge the skill gap.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 group">
+            <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center text-baqc-red text-2xl mb-6 group-hover:bg-baqc-red group-hover:text-white transition-colors">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">Workshops</h4>
+            <p class="text-gray-600">Hands-on sessions on Automation, Performance Testing, Security, and more.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 group">
+             <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-flag"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">CTF & Challenges</h4>
+            <p class="text-gray-600">Exciting bug hunting and QA challenges to test and sharpen your skills.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 group">
+             <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-3">Networking</h4>
+            <p class="text-gray-600">Connect with peers, share job opportunities, and grow your professional circle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white border-t border-gray-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-1">
+            <a href="#" class="flex items-center gap-2 mb-4">
+              <div class="w-8 h-8 bg-baqc-green rounded-full flex items-center justify-center text-white font-bold border border-baqc-red">B</div>
+              <span class="font-bold text-xl tracking-tighter text-white">BAQC<span class="text-baqc-red">.bd</span></span>
+            </a>
+            <p class="text-gray-400 text-sm mb-6">
+              Building a Quality Future for Bangladesh. The largest community for QA professionals.
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://www.linkedin.com/company/baqc" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="#home" class="hover:text-baqc-green transition-colors">Home</a></li>
+              <li><a href="#workshops" class="hover:text-baqc-green transition-colors">Workshops</a></li>
+              <li><a href="#about" class="hover:text-baqc-green transition-colors">About Us</a></li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" class="hover:text-baqc-green transition-colors">Join Member</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Community</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="https://chat.whatsapp.com/BkIdWkO5LF1K3GFlnY9sC6" class="hover:text-baqc-green transition-colors">WhatsApp Group</a></li>
+              <li><a href="https://www.linkedin.com/groups/15891061/" class="hover:text-baqc-green transition-colors">LinkedIn Group</a></li>
+              <li><a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" class="hover:text-baqc-green transition-colors">Community Guidelines</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start gap-3">
+                <i class="fa-regular fa-envelope mt-1 text-baqc-green"></i>
+                <span>contact@baqc.bd</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot mt-1 text-baqc-green"></i>
+                <span>Dhaka, Bangladesh</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-gray-500 text-sm text-center md:text-left">
+            &copy; 2026 Bangladesh Aspiring QA Community. All rights reserved.
+          </p>
+          <div class="flex gap-6 text-sm text-gray-500">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Additional inline script for mobile menu if external file fails or for immediate interaction
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
   </body>
 </html>
