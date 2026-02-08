@@ -44,8 +44,6 @@ No build tools or Node.js required, but you need PHP installed.
 .
 ├── src/
 │   ├── index.php         # Main Landing Page
-│   ├── privacy.php       # Privacy Policy
-│   ├── terms.php         # Terms of Service
 │   ├── includes/         # PHP Partials & Templates
 │   └── assets/
 │       ├── css/          # (Empty/Minimal) Custom styles if needed

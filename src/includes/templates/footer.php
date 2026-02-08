@@ -65,8 +65,7 @@
             &copy; 2026 Bangladesh Aspiring QA Community. All rights reserved.
           </p>
           <div class="flex gap-6 text-sm text-gray-400">
-            <a href="privacy.php" class="hover:text-white">Privacy Policy</a>
-            <a href="terms.php" class="hover:text-white">Terms of Service</a>
+            <!-- Legal links removed -->
           </div>
         </div>
       </div>

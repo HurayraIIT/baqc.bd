@@ -4,7 +4,6 @@ This repo is a pure static site. Optimize for simplicity and performance.
 
 ## Repo Layout
 - `src/index.php`: Main landing page (PHP).
-- `src/privacy.php`, `src/terms.php`: Legal pages (PHP).
 - `src/includes/`: PHP templates, partials, and SVGs.
 - `src/assets/`: Static assets (images, JS).
   - Note: previous local fonts folder `src/assets/fonts/` has been removed in favor of system fonts.
