@@ -8,7 +8,7 @@
 
         <div class="space-y-4">
           <!-- Q1 -->
-          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion" open>
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
               What is BAQC?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
@@ -21,7 +21,7 @@
           </details>
 
           <!-- Q2 -->
-          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion">
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
               How can I join BAQC?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
@@ -34,7 +34,7 @@
           </details>
 
           <!-- Q3 -->
-          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion">
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
               Is there a fee to join the community?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
@@ -47,7 +47,7 @@
           </details>
 
            <!-- Q4 -->
-           <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+           <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion">
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
               How do I get the personal subdomain?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
@@ -60,7 +60,7 @@
           </details>
 
           <!-- Q5 -->
-          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion">
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
                Who can attend workshops?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
@@ -73,7 +73,7 @@
           </details>
 
           <!-- Q6 -->
-          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+          <details class="group bg-gray-50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden" name="faq-accordion">
             <summary class="flex items-center justify-between p-6 cursor-pointer text-lg font-bold text-gray-900 select-none">
                How can I be a volunteer?
               <span class="ml-auto transition-transform duration-300 group-open:rotate-180">
