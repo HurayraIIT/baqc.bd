@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+# Disallow: /includes/
+
+# Sitemap
+Sitemap: https://baqc.bd/sitemap.xml
+
+# Assets
+Disallow: /assets/
