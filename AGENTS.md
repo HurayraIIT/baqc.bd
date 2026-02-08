@@ -3,10 +3,9 @@
 This repo is a pure static site. Optimize for simplicity and performance.
 
 ## Repo Layout
-- `src/index.php`: Main landing page (PHP).
-- `src/includes/`: PHP templates, partials, and SVGs.
-- `src/assets/`: Static assets (images, JS).
-  - Note: previous local fonts folder `src/assets/fonts/` has been removed in favor of system fonts.
+- `src/public/index.php`: Main landing page (PHP).
+- `src/public/assets/`: Static assets (images, JS).
+- `src/includes/`: PHP templates, partials, and SVGs (outside web root).
 
 ## Technology Stack
 - **HTML5**: Semantic and accessible (served via PHP).
@@ -20,7 +19,7 @@ This repo is a pure static site. Optimize for simplicity and performance.
 ## Development
 - **Local Server**: Required for PHP.
   ```bash
-  php -S localhost:8000 -t src
+  php -S localhost:8000 -t src/public
   ```
 
 ## Conventions

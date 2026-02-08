@@ -20,8 +20,8 @@
               <a href="#" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" aria-label="Facebook">
                 <?php include_svg('footer-facebook-icon'); ?>
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" aria-label="Instagram">
-                <?php include_svg('footer-instagram-icon'); ?>
+              <a href="https://discord.gg/3mgszv3J" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" aria-label="Join Discord">
+                <?php include_svg('discord-icon'); ?>
               </a>
             </div>
           </div>

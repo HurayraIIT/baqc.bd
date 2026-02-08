@@ -33,7 +33,7 @@ No build tools or Node.js required, but you need PHP installed.
     Start the PHP built-in server:
 
     ```bash
-    php -S localhost:8000 -t src
+    php -S localhost:8000 -t src/public
     ```
 
     Then verify at `http://localhost:8000`.
@@ -43,12 +43,13 @@ No build tools or Node.js required, but you need PHP installed.
 ```
 .
 ├── src/
-│   ├── index.php         # Main Landing Page
+│   ├── public/
+│   │   ├── index.php     # Main Landing Page
+│   │   └── assets/       # Static assets
 │   ├── includes/         # PHP Partials & Templates
-│   └── assets/
-│       ├── css/          # (Empty/Minimal) Custom styles if needed
-│       ├── images/       # Static images
-│       └── js/           # Main logic (mobile menu)
+│   │   ├── templates/
+│   │   ├── partials/
+│   │   └── svgs/
 └── README.md
 ```
 
