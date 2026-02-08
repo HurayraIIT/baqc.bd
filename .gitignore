@@ -13,7 +13,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 
-# Node (if used in future)
+# Node
 node_modules/
 .npm/
 

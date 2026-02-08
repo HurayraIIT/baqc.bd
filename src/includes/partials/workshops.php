@@ -19,9 +19,9 @@
                 Feb 06, 2026 • 09:30 PM
               </div>
               <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">How Modern AI is Shaping the Future of Software Quality</h4>
-              <p class="text-gray-600 mb-2 text-sm">Speaker: <strong><a href="https://www.linkedin.com/in/hiromia/" target="_blank" class="text-indigo-600 hover:underline">Hiro Mia</a></strong>, Technical Lead, Brac IT</p>
+              <p class="text-gray-600 mb-2 text-sm">Speaker: <strong><a href="https://www.linkedin.com/in/hiromia/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Hiro Mia</a></strong>, Technical Lead, Brac IT</p>
               <p class="text-gray-600 mb-6 text-sm">Live on Google Meet (Link shared 30 mins prior).</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-indigo-600 transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-indigo-600 transition-colors">
                 Register for Free
               </a>
             </div>
@@ -40,7 +40,7 @@
               </div>
               <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-baqc-green transition-colors">[DUMMY Event]</h4>
               <p class="text-gray-600 mb-6 text-sm">Master automated API testing workflows, environment variables, and CI/CD integration.</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-baqc-green transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-baqc-green transition-colors">
                 Register for Free
               </a>
             </div>
@@ -59,7 +59,7 @@
               </div>
               <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors"> [DUMMY Event 2]</h4>
               <p class="text-gray-600 mb-6 text-sm">Introduction to Appium for Android and iOS testing. Setup, locator strategies, and basic scripts.</p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-blue-600 transition-colors">
                 Register for Free
               </a>
             </div>
@@ -72,7 +72,7 @@
                <h4 class="text-xl font-bold text-gray-900 mb-2">Past Workshops & Resources</h4>
                <p class="text-gray-600">Missed a session? Catch up with our recordings and slide decks.</p>
              </div>
-             <a href="https://www.youtube.com/@baqc-bd" target="_blank" class="px-6 py-3 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:border-baqc-green hover:text-baqc-green transition-colors">
+             <a href="https://www.youtube.com/@baqc-bd" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:border-baqc-green hover:text-baqc-green transition-colors">
                View Archive
              </a>
            </div>

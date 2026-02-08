@@ -32,7 +32,7 @@
           </div>
           <div class="relative">
              <div class="absolute -inset-4 bg-baqc-red/20 rounded-2xl blur-lg rotate-3"></div>
-             <img src="assets/images/unsplash-photo-community-members.webp" alt="Team collaboration" width="800" height="533" class="relative rounded-2xl shadow-2xl border border-gray-700">
+             <img src="assets/images/unsplash-photo-community-members.webp" alt="Team collaboration" width="800" height="533" class="relative rounded-2xl shadow-2xl border border-gray-700" loading="lazy" decoding="async">
              
              <div class="absolute -bottom-6 -left-6 bg-baqc-white bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
                <div class="flex items-center gap-4 mb-2">

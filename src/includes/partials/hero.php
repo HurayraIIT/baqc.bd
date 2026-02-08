@@ -7,12 +7,12 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-baqc-green text-sm font-semibold mb-6 border border-green-200">
-          <span class="w-2 h-2 rounded-full bg-baqc-red animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-baqc-red motion-safe:animate-pulse"></span>
           Shaping the future of QA in Bangladesh
         </div>
         
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-baqc-dark tracking-tight leading-tight mb-6">
-          Bangladesh <span class="text-transparent bg-clip-text bg-linear-to-r from-baqc-green to-teal-600">Aspiring QA</span> Community - <span class="decoration-baqc-red decoration-4 underline underline-offset-4">BAQC</span>
+          Bangladesh <span class="decoration-baqc-red decoration-4 underline underline-offset-4">Aspiring QA</span> Community - <span>BAQC</span>
         </h1>
         
         <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -20,7 +20,7 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-baqc-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 ring-4 ring-red-100">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-baqc-red text-white text-lg font-bold rounded-lg shadow-lg hover:bg-red-600 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 ring-4 ring-red-100">
             <span>Register Now</span>
             <?php include_svg('register-arrow'); ?>
           </a>
@@ -31,19 +31,19 @@
         </div>
 
         <div class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm sm:text-base font-medium text-gray-600">
-          <a href="https://www.linkedin.com/company/baqc" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="Visit BAQC LinkedIn Page">
+          <a href="https://www.linkedin.com/company/baqc" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="Visit BAQC LinkedIn Page">
             <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors" aria-hidden="true">
               <?php include_svg('linkedin-icon'); ?>
             </span>
             LinkedIn Page
           </a>
-          <a href="https://www.linkedin.com/groups/15891061/" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="Join BAQC LinkedIn Group">
+          <a href="https://www.linkedin.com/groups/15891061/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="Join BAQC LinkedIn Group">
             <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors" aria-hidden="true">
               <?php include_svg('linkedin-group-icon'); ?>
             </span>
             LinkedIn Group
           </a>
-          <a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" target="_blank" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="View Community Guidelines">
+          <a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-baqc-green transition-colors group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-baqc-green rounded-md" aria-label="View Community Guidelines">
             <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-baqc-green group-hover:text-white transition-colors" aria-hidden="true">
               <?php include_svg('community-guidelines-icon'); ?>
             </span>
