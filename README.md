@@ -4,11 +4,11 @@ Welcome to the official repository for the [BAQC](https://baqc.bd) landing page.
 
 ## 🚀 Features
 
-- **Modern UI/UX**: Built with Tailwind CSS (v4) for a clean, responsive design.
+- **Modern UI/UX**: Built with Tailwind CSS (v3) for a clean, responsive design.
 - **Performance Focused**: 
   - Zero external font requests (uses System Fonts).
   - Zero icon font requests (uses inline SVGs).
-  - Minimal render-blocking resources.
+  - Precompiled static CSS.
 - **Accessible**: Semantic HTML and widespread use of ARIA labels.
 - **SEO Optimized**: Meta tags for Open Graph, Twitter Cards, and JSON-LD structured data.
 
@@ -16,12 +16,10 @@ Welcome to the official repository for the [BAQC](https://baqc.bd) landing page.
 
 - **HTML5** (served via PHP)
 - **PHP 8.x**
-- **Tailwind CSS** (via CDN for simplicity)
+- **Tailwind CSS** (v3 via npm)
 - **Vanilla JavaScript** (ES6+)
 
 ## 💻 Local Development
-
-No build tools or Node.js required, but you need PHP installed.
 
 1.  **Clone the repository**:
     ```bash
@@ -29,7 +27,17 @@ No build tools or Node.js required, but you need PHP installed.
     cd baqc.bd
     ```
 
-2.  **Run locally**:
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Build CSS**:
+    ```bash
+    npm run build
+    ```
+
+4.  **Run locally**:
     Start the PHP built-in server:
 
     ```bash
@@ -43,6 +51,7 @@ No build tools or Node.js required, but you need PHP installed.
 ```
 .
 ├── src/
+│   ├── input.css         # Tailwind source
 │   ├── public/
 │   │   ├── index.php     # Main Landing Page
 │   │   └── assets/       # Static assets

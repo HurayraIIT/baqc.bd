@@ -11,10 +11,10 @@
               Building a Quality Future for Bangladesh. The largest community for QA professionals.
             </p>
             <div class="flex space-x-4">
-              <a href="https://www.linkedin.com/company/baqc" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" target="_blank" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/baqc" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <?php include_svg('footer-linkedin-icon'); ?>
               </a>
-              <a href="https://www.youtube.com/@baqc-bd" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" target="_blank" aria-label="YouTube">
+              <a href="https://www.youtube.com/@baqc-bd" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <?php include_svg('footer-youtube-icon'); ?>
               </a>
               <a href="#" class="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-baqc-green rounded-sm" aria-label="Facebook">
@@ -32,7 +32,7 @@
               <li><a href="#home" class="hover:text-baqc-green transition-colors">Home</a></li>
               <li><a href="#workshops" class="hover:text-baqc-green transition-colors">Workshops</a></li>
               <li><a href="#about" class="hover:text-baqc-green transition-colors">About Us</a></li>
-              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" class="hover:text-baqc-green transition-colors">Join Member</a></li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfiUoGuxdoP8XeFNSL2K2BPGZry9Ql3Ac9UFLWq1SLbkK9NWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="hover:text-baqc-green transition-colors">Join Member</a></li>
             </ul>
           </div>
           
@@ -40,8 +40,8 @@
             <h4 class="text-lg font-semibold mb-4 text-white">Community</h4>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li><a href="https://discord.gg/3mgszv3J" target="_blank" rel="noopener noreferrer" class="hover:text-baqc-green transition-colors">Discord Server</a></li>
-              <li><a href="https://www.linkedin.com/groups/15891061/" class="hover:text-baqc-green transition-colors">LinkedIn Group</a></li>
-              <li><a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" class="hover:text-baqc-green transition-colors">Community Guidelines</a></li>
+              <li><a href="https://www.linkedin.com/groups/15891061/" target="_blank" rel="noopener noreferrer" class="hover:text-baqc-green transition-colors">LinkedIn Group</a></li>
+              <li><a href="https://drive.google.com/file/d/1g4jopeAtDhMzLLhb_HFJWMii7ZwQqNMo/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="hover:text-baqc-green transition-colors">Community Guidelines</a></li>
             </ul>
           </div>
           
@@ -72,16 +72,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
-    <script>
-        // Additional inline script for mobile menu if external file fails or for immediate interaction
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
 
-        if(btn && menu) {
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-        }
-    </script>
   </body>
 </html>

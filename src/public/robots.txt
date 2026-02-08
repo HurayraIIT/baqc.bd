@@ -4,6 +4,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://baqc.bd/sitemap.xml
-
-# Assets
-Disallow: /assets/
