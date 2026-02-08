@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://baqc.bd/sitemap.xml
+
+# Disallow internal assets if necessary (optional, but keep open for now)
+# Disallow: /assets/
