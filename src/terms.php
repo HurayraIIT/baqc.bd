@@ -1,35 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terms of Service - BAQC</title>
-    <meta name="description" content="Terms of Service for Bangladesh Aspiring QA Community (BAQC). Guidelines for community participation." />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-baqc-green: #006a4e;
-        --color-baqc-red: #d9253a;
-        --color-baqc-dark: #0f172a;
-        --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      }
-    </style>
-</head>
-<body class="font-sans antialiased text-slate-800 bg-gray-50">
-
-    <div class="min-h-screen flex flex-col">
-        <!-- Header -->
-        <header class="bg-white border-b border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                 <a href="index.html" class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-baqc-green rounded-full flex items-center justify-center text-white font-bold text-lg border-2 border-baqc-red">B</div>
-                    <span class="font-bold text-xl tracking-tighter text-baqc-green">BAQC<span class="text-baqc-red">.bd</span></span>
-                </a>
-                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-baqc-green transition-colors">
-                    &larr; Back to Home
-                </a>
-            </div>
-        </header>
+<?php 
+require_once 'includes/functions.php'; 
+$page_title = 'Terms of Service - BAQC';
+$page_description = 'Terms of Service for Bangladesh Aspiring QA Community (BAQC). Guidelines for community participation.';
+include 'includes/templates/header-simple.php'; 
+?>
 
         <!-- Content -->
         <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -66,20 +40,11 @@
                 </div>
                 
                 <div class="mt-12 pt-8 border-t border-gray-100 flex justify-center">
-                     <a href="index.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-baqc-green hover:bg-green-800 transition-colors shadow-sm">
+                     <a href="index.php" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-baqc-green hover:bg-green-800 transition-colors shadow-sm">
                         Return to Homepage
                     </a>
                 </div>
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="bg-gray-50 border-t border-gray-200 py-8">
-            <div class="max-w-4xl mx-auto px-4 text-center text-gray-500 text-sm">
-                &copy; 2026 Bangladesh Aspiring QA Community. All rights reserved.
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+<?php include 'includes/templates/footer-simple.php'; ?>

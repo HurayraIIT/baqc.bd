@@ -3,24 +3,25 @@
 This repo is a pure static site. Optimize for simplicity and performance.
 
 ## Repo Layout
-- `src/index.html`: Main landing page.
-- `src/privacy.html`, `src/terms.html`: Legal pages.
+- `src/index.php`: Main landing page (PHP).
+- `src/privacy.php`, `src/terms.php`: Legal pages (PHP).
+- `src/includes/`: PHP templates, partials, and SVGs.
 - `src/assets/`: Static assets (images, JS).
   - Note: previous local fonts folder `src/assets/fonts/` has been removed in favor of system fonts.
 
 ## Technology Stack
-- **HTML5**: Semantic and accessible.
+- **HTML5**: Semantic and accessible (served via PHP).
+- **PHP**: Modular structure for easier maintenance.
 - **CSS**: Tailwind CSS (v4) via CDN.
   - Theme configuration is inline within `<style type="text/tailwindcss">` in HTML files.
 - **Fonts**: System font stack (no external font dependencies).
-- **Icons**: Inline SVGs (Lucide/Heroicons style). No icon fonts.
+- **Icons**: Inline SVGs (Lucide/Heroicons style) included via PHP. No icon fonts.
 - **JS**: Minimal Vanilla JS for mobile menu toggling.
 
 ## Development
-- **No Build Step**: The site works directly by opening `src/index.html` in a browser.
-- **Local Server**: Recommended for testing.
+- **Local Server**: Required for PHP.
   ```bash
-  python3 -m http.server 8000 --directory src
+  php -S localhost:8000 -t src
   ```
 
 ## Conventions
