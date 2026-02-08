@@ -14,13 +14,14 @@ Welcome to the official repository for the [BAQC](https://baqc.bd) landing page.
 
 ## 🛠️ Tech Stack
 
-- **HTML5**
+- **HTML5** (served via PHP)
+- **PHP 8.x**
 - **Tailwind CSS** (via CDN for simplicity)
 - **Vanilla JavaScript** (ES6+)
 
 ## 💻 Local Development
 
-No build tools or Node.js required!
+No build tools or Node.js required, but you need PHP installed.
 
 1.  **Clone the repository**:
     ```bash
@@ -29,11 +30,10 @@ No build tools or Node.js required!
     ```
 
 2.  **Run locally**:
-    You can simply open `src/index.html` in your browser, or use a simple HTTP server:
+    Start the PHP built-in server:
 
     ```bash
-    # Python 3
-    python3 -m http.server 8000 --directory src
+    php -S localhost:8000 -t src
     ```
 
     Then verify at `http://localhost:8000`.
@@ -43,9 +43,8 @@ No build tools or Node.js required!
 ```
 .
 ├── src/
-│   ├── index.html        # Main Landing Page
-│   ├── privacy.html      # Privacy Policy
-│   ├── terms.html        # Terms of Service
+│   ├── index.php         # Main Landing Page
+│   ├── includes/         # PHP Partials & Templates
 │   └── assets/
 │       ├── css/          # (Empty/Minimal) Custom styles if needed
 │       ├── images/       # Static images
