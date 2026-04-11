@@ -1,0 +1,152 @@
+---
+const formUrl = 'https://forms.gle/B1bn2JvwqHvpLwTcA';
+---
+
+<aside class="announcement container-x" aria-labelledby="announcement-heading" lang="bn">
+  <div class="announcement__card surface">
+    <p class="announcement__eyebrow">
+      <span class="announcement__dot" aria-hidden="true"></span>
+      বিশেষ ঘোষণা
+    </p>
+    <h2 id="announcement-heading" class="announcement__title">
+      BAQC Community Welfare Fund
+    </h2>
+
+    <p>আমাদের কমিউনিটির কিছু নিয়মিত ও প্রয়োজনীয় খরচ রয়েছে—যেমন:</p>
+    <ul class="announcement__list">
+      <li>🌐 কমিউনিটি ওয়েবসাইট (ডোমেইন, হোস্টিং, মেইনটেন্যান্স)</li>
+      <li>📄 বিভিন্ন অর্গানাইজেশনের সাথে যোগাযোগের জন্য অফিসিয়াল ডকুমেন্টেশন মেইনটেন্যান্স</li>
+      <li>🚀 ভবিষ্যতে মেম্বারদের জন্য নতুন নতুন সুবিধা যুক্ত করা</li>
+    </ul>
+
+    <p>এই বিষয়গুলো সুন্দরভাবে পরিচালনার জন্য আমরা একটি ছোট উদ্যোগ নিতে চাই। 💙</p>
+
+    <p class="announcement__highlight">
+      প্রস্তাবনা হচ্ছে—<br />
+      👉 প্রতি মাসে মাত্র <strong>৫০ টাকা</strong> করে স্বেচ্ছায় ডোনেশন
+    </p>
+
+    <p>
+      এই ডোনেশন ফান্ডটি <em>“BAQC Community Welfare Fund”</em> হিসেবে পরিচিত হবে।
+    </p>
+
+    <div class="announcement__callout">
+      <p><strong>💡 বিশেষ ঘোষণা:</strong></p>
+      <p>
+        আমরা প্রাথমিকভাবে মাত্র <strong>১০০ জন ডোনার মেম্বার</strong> নিয়ে এই ফান্ডটি শুরু
+        করতে চাই। অর্থাৎ, আপনি চাইলে এই ১০০ জনের একজন
+        <strong>গর্বিত ফাউন্ডিং মেম্বার</strong> হতে পারেন 🤝
+      </p>
+    </div>
+
+    <ul class="announcement__notes">
+      <li>🔹 ডোনেশন সম্পূর্ণ <strong>ঐচ্ছিক (optional)</strong></li>
+      <li>🔹 যারা ইচ্ছুক, তারাই অংশগ্রহণ করবেন</li>
+      <li>
+        🔹 বছরে যে কোনো খরচ করা হলে তা
+        <strong>স্বচ্ছতার সাথে পুরো কমিউনিটির সামনে প্রকাশ করা হবে</strong>
+      </li>
+    </ul>
+
+    <p>🎯 আপনার ছোট অবদানই কমিউনিটির বড় পরিবর্তনের শুরু হতে পারে।</p>
+    <p>
+      🔥 তাই দেরি না করে এখনই রেজিস্ট্রেশন করুন<br />
+      👉 সীমিত ১০০ জনের মধ্যে নিজের জায়গা নিশ্চিত করুন!
+    </p>
+
+    <div class="announcement__actions">
+      <a class="btn btn-primary" href={formUrl} target="_blank" rel="noopener noreferrer">
+        👇 ফর্ম পূরণ করুন
+      </a>
+    </div>
+
+    <p class="announcement__footer">আপনার অংশগ্রহণই আমাদের শক্তি 🚀</p>
+  </div>
+</aside>
+
+<style>
+  .announcement {
+    padding-block: 2.5rem 1rem;
+  }
+  .announcement__card {
+    padding: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+    border-left: 4px solid var(--color-brand-red);
+    background: linear-gradient(
+      180deg,
+      rgba(244, 42, 65, 0.04) 0%,
+      rgba(0, 106, 78, 0.04) 100%
+    );
+  }
+  .announcement__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-brand-red-600);
+    font-weight: 700;
+    background: rgba(244, 42, 65, 0.1);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    margin: 0 0 0.75rem;
+  }
+  .announcement__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--color-brand-red);
+    box-shadow: 0 0 0 4px rgba(244, 42, 65, 0.18);
+  }
+  .announcement__title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+    color: var(--color-brand-green-700);
+  }
+  .announcement__card p {
+    margin: 0.75rem 0;
+    color: var(--color-ink-soft);
+    line-height: 1.75;
+  }
+  .announcement__list,
+  .announcement__notes {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--color-ink-soft);
+    line-height: 1.7;
+  }
+  .announcement__highlight {
+    padding: 0.9rem 1.1rem;
+    background: rgba(0, 106, 78, 0.08);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-brand-green-200, rgba(0, 106, 78, 0.2));
+    color: var(--color-ink) !important;
+  }
+  .announcement__highlight strong {
+    color: var(--color-brand-red-600);
+    font-size: 1.1em;
+  }
+  .announcement__callout {
+    margin: 1.25rem 0;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px dashed var(--color-brand-red);
+    border-radius: var(--radius-md);
+  }
+  .announcement__callout p {
+    margin: 0.4rem 0;
+  }
+  .announcement__actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .announcement__footer {
+    margin-top: 1.25rem !important;
+    font-weight: 600;
+    color: var(--color-brand-green-700) !important;
+  }
+</style>
