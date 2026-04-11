@@ -1,0 +1,10 @@
+---
+interface Props {
+  upcoming: boolean;
+}
+const { upcoming } = Astro.props;
+---
+
+<span class:list={['badge', upcoming ? 'badge-upcoming' : 'badge-past']}>
+  {upcoming ? 'Upcoming' : 'Past'}
+</span>

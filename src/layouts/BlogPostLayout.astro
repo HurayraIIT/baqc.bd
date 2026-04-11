@@ -1,0 +1,121 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import JsonLd from '~/components/seo/JsonLd.astro';
+import { formatPostDate, getReadingTime, type BlogEntry } from '~/lib/blog';
+import { absoluteUrl } from '~/lib/seo';
+import { SITE_TITLE } from '~/consts';
+
+interface Props {
+  entry: BlogEntry;
+  body: string;
+}
+
+const { entry, body } = Astro.props;
+const { data } = entry;
+const reading = getReadingTime(body);
+const url = absoluteUrl(`/blog/${entry.id}`);
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  author: { '@type': 'Person', name: data.author },
+  datePublished: data.pubDate.toISOString(),
+  dateModified: (data.updatedDate ?? data.pubDate).toISOString(),
+  mainEntityOfPage: url,
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_TITLE,
+    url: absoluteUrl('/'),
+  },
+  keywords: data.tags,
+};
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  type="article"
+  publishedTime={data.pubDate}
+  modifiedTime={data.updatedDate}
+>
+  <JsonLd slot="head" data={articleSchema} />
+  <article class="post container-x">
+    <header class="post__header">
+      <p class="post__meta">
+        <time datetime={data.pubDate.toISOString()}>{formatPostDate(data.pubDate)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{reading} min read</span>
+        <span aria-hidden="true">·</span>
+        <span>by {data.author}</span>
+      </p>
+      <h1>{data.title}</h1>
+      <p class="post__lede">{data.description}</p>
+      {
+        data.tags.length > 0 && (
+          <ul class="post__tags" aria-label="Tags">
+            {data.tags.map((t) => (
+              <li>
+                <span class="badge badge-tag">#{t}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </header>
+
+    {
+      data.cover && data.coverAlt && (
+        <figure class="post__cover">
+          <Image src={data.cover} alt={data.coverAlt} loading="eager" fetchpriority="high" />
+        </figure>
+      )
+    }
+
+    <div class="post__body prose-baqc">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    max-width: 760px;
+    padding-block: 3rem 4rem;
+  }
+  .post__header {
+    margin-bottom: 2rem;
+  }
+  .post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+  }
+  .post__lede {
+    font-size: 1.2rem;
+    color: var(--color-ink-soft);
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+  .post__tags {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .post__cover {
+    margin: 0 0 2.5rem;
+  }
+  .post__cover :global(img) {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    height: auto;
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'team'>;
+}
+
+const { member } = Astro.props;
+const { data } = member;
+const socialEntries = (
+  [
+    ['github', 'GitHub'],
+    ['linkedin', 'LinkedIn'],
+    ['x', 'X'],
+    ['website', 'Website'],
+  ] as const
+)
+  .map(([key, label]) => ({ key, label, href: data.social[key] }))
+  .filter((s) => !!s.href);
+---
+
+<article class="member surface">
+  <Image
+    src={data.avatar}
+    alt={data.avatarAlt}
+    width={160}
+    height={160}
+    loading="lazy"
+    class="member__avatar"
+  />
+  <h3 class="member__name">{data.name}</h3>
+  <p class="member__role">{data.role}</p>
+  <p class="member__bio">{data.bio}</p>
+  {
+    socialEntries.length > 0 && (
+      <ul class="member__social" aria-label={`${data.name} social links`}>
+        {socialEntries.map((s) => (
+          <li>
+            <a href={s.href} rel="noopener me" target="_blank">
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</article>
+
+<style>
+  .member {
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .member__avatar {
+    border-radius: 999px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
+  .member__name {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .member__role {
+    margin: 0;
+    color: var(--color-brand-green-700);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .member__bio {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+  }
+  .member__social {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .member__social a {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+  .member__social a:hover {
+    color: var(--color-brand-green-700);
+  }
+</style>

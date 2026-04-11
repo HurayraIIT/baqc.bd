@@ -1,0 +1,67 @@
+---
+import { NAV_LINKS } from '~/consts';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+function isActive(href: string): boolean {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+---
+
+<nav aria-label="Primary">
+  <ul class="nav-list">
+    {
+      NAV_LINKS.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-link', isActive(link.href) && 'is-active']}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+    text-decoration: none;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+  .nav-link:hover {
+    background: var(--color-paper-soft);
+    color: var(--color-brand-green-700);
+  }
+  .nav-link.is-active {
+    background: var(--color-brand-green-50);
+    color: var(--color-brand-green-700);
+  }
+
+  @media (max-width: 640px) {
+    .nav-link {
+      padding: 0.5rem 0.65rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

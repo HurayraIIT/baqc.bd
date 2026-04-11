@@ -1,0 +1,8 @@
+/*
+ * Brand tokens — Bangladesh flag colors.
+ * Mirrored into Tailwind via @theme in global.css.
+ */
+:root {
+  --baqc-green: #006a4e;
+  --baqc-red: #f42a41;
+}

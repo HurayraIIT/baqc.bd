@@ -1,0 +1,117 @@
+---
+import { SITE_SHORT_TITLE } from '~/consts';
+---
+
+<section class="hero">
+  <div class="container-x hero__inner">
+    <p class="hero__eyebrow">
+      <span class="hero__dot" aria-hidden="true"></span>
+      A community for aspiring QA engineers in Bangladesh
+    </p>
+    <h1 class="hero__title">
+      Learn quality engineering, <span class="hero__accent">together.</span>
+    </h1>
+    <p class="hero__lede">
+      {SITE_SHORT_TITLE} is a volunteer-run community that helps aspiring and early-career testers in
+      Bangladesh learn the craft, find mentors, and ship better software — without gatekeeping, jargon,
+      or hidden costs.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn-primary" href="/events">See upcoming events</a>
+      <a class="btn btn-secondary" href="/about">What is BAQC?</a>
+    </div>
+    <ul class="hero__pillars" aria-label="What we offer">
+      <li><strong>Meetups</strong><span>Online &amp; in Dhaka</span></li>
+      <li><strong>Workshops</strong><span>Practical, hands-on</span></li>
+      <li><strong>Mentorship</strong><span>Peer &amp; senior</span></li>
+      <li><strong>Articles</strong><span>By the community</span></li>
+    </ul>
+  </div>
+  <div class="hero__bg" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: clamp(3rem, 6vw + 2rem, 6.5rem) 0 clamp(2.5rem, 4vw + 1.5rem, 4.5rem);
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(60% 80% at 90% 0%, rgba(244, 42, 65, 0.1), transparent 70%),
+      radial-gradient(70% 90% at 0% 0%, rgba(0, 106, 78, 0.12), transparent 70%),
+      linear-gradient(180deg, var(--color-paper-soft) 0%, var(--color-paper) 100%);
+  }
+  .hero__inner {
+    max-width: 880px;
+    text-align: left;
+  }
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-brand-green-700);
+    font-weight: 600;
+    background: var(--color-brand-green-50);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    margin: 0 0 1.25rem;
+  }
+  .hero__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--color-brand-red);
+    box-shadow: 0 0 0 4px rgba(244, 42, 65, 0.18);
+  }
+  .hero__title {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  }
+  .hero__accent {
+    color: var(--color-brand-red-600);
+  }
+  .hero__lede {
+    margin: 1.25rem 0 0;
+    font-size: 1.15rem;
+    color: var(--color-ink-soft);
+    max-width: 60ch;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.75rem;
+  }
+  .hero__pillars {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    max-width: 720px;
+  }
+  .hero__pillars li {
+    display: flex;
+    flex-direction: column;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+  }
+  .hero__pillars strong {
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+  .hero__pillars span {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-top: 2px;
+  }
+</style>

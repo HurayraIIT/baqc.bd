@@ -1,0 +1,86 @@
+---
+import { formatPostDate, getReadingTime, type BlogEntry } from '~/lib/blog';
+
+interface Props {
+  entry: BlogEntry;
+}
+
+const { entry } = Astro.props;
+const { data, body } = entry;
+const reading = body ? getReadingTime(body) : 3;
+const href = `/blog/${entry.id}`;
+---
+
+<a class="post-card surface" href={href}>
+  <p class="post-card__meta">
+    <time datetime={data.pubDate.toISOString()}>{formatPostDate(data.pubDate)}</time>
+    <span aria-hidden="true">·</span>
+    <span>{reading} min read</span>
+  </p>
+  <h3 class="post-card__title">{data.title}</h3>
+  <p class="post-card__desc">{data.description}</p>
+  {
+    data.tags.length > 0 && (
+      <ul class="post-card__tags" aria-label="Tags">
+        {data.tags.slice(0, 3).map((t) => (
+          <li>
+            <span class="badge badge-tag">#{t}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  <span class="post-card__cta" aria-hidden="true">Read post →</span>
+</a>
+
+<style>
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--color-ink);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--color-brand-green-200);
+  }
+  .post-card__meta {
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .post-card__title {
+    margin: 0.25rem 0 0;
+    font-size: 1.25rem;
+    color: var(--color-ink);
+  }
+  .post-card__desc {
+    margin: 0.25rem 0 0;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+    font-size: 0.95rem;
+  }
+  .post-card__tags {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .post-card__cta {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: var(--color-brand-green-700);
+    font-size: 0.9rem;
+  }
+</style>

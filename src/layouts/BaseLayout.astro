@@ -1,0 +1,43 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import BaseHead from '~/components/seo/BaseHead.astro';
+import Header from '~/components/layout/Header.astro';
+import Footer from '~/components/layout/Footer.astro';
+import { SITE_LANG } from '~/consts';
+import '~/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article' | 'event';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+}
+
+const { title, description, image, type, publishedTime, modifiedTime } = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE_LANG}>
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+    />
+    <ClientRouter />
+    <slot name="head" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import EventTimeline from '~/components/events/EventTimeline.astro';
+import { getAllEvents, splitUpcomingPast } from '~/lib/events';
+
+const all = await getAllEvents();
+const { upcoming, past } = splitUpcomingPast(all);
+---
+
+<BaseLayout
+  title="Events"
+  description="Upcoming and past BAQC events — meetups, workshops, and community gatherings for aspiring QA engineers in Bangladesh."
+>
+  <section class="events-page container-x">
+    <header class="events-page__header">
+      <h1>Events</h1>
+      <p class="events-page__lede">
+        Meetups, workshops, and informal hangouts. Free to attend, friendly to beginners, and built
+        for people who want to learn out loud.
+      </p>
+    </header>
+    <EventTimeline upcoming={upcoming} past={past} />
+  </section>
+</BaseLayout>
+
+<style>
+  .events-page {
+    padding-block: 3rem 4rem;
+  }
+  .events-page__header {
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+  .events-page__lede {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: var(--color-ink-soft);
+  }
+</style>

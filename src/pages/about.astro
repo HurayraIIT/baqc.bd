@@ -1,0 +1,36 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'about');
+if (!entry) throw new Error('Missing pages/about content');
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article class="page container-x">
+    <header class="page__header">
+      <h1>{entry.data.title}</h1>
+      <p class="page__lede">{entry.data.description}</p>
+    </header>
+    <div class="prose-baqc">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 760px;
+    padding-block: 3rem 4rem;
+  }
+  .page__header {
+    margin-bottom: 2rem;
+  }
+  .page__lede {
+    margin-top: 0.75rem;
+    color: var(--color-ink-soft);
+    font-size: 1.15rem;
+    line-height: 1.55;
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import TeamGrid from '~/components/team/TeamGrid.astro';
+
+const members = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Team"
+  description="Meet the volunteer organizers behind BAQC — and learn how to join us."
+>
+  <section class="team-page container-x">
+    <header class="team-page__header">
+      <h1>The team</h1>
+      <p class="team-page__lede">
+        BAQC is run by a small group of volunteers who care about building a welcoming, practical
+        community for aspiring QA engineers in Bangladesh. There's always room for one more — see
+        the open spot below.
+      </p>
+    </header>
+    <TeamGrid members={members} />
+  </section>
+</BaseLayout>
+
+<style>
+  .team-page {
+    padding-block: 3rem 4rem;
+    max-width: 1000px;
+  }
+  .team-page__header {
+    margin-bottom: 2.5rem;
+    max-width: 60ch;
+  }
+  .team-page__lede {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: var(--color-ink-soft);
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+import { type GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const LEGAL_SLUGS = new Set(['privacy', 'terms', 'code-of-conduct']);
+  const pages = await getCollection('pages');
+  return pages
+    .filter((p) => LEGAL_SLUGS.has(p.id))
+    .map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  modifiedTime={entry.data.updatedDate}
+>
+  <article class="legal container-x">
+    <header class="legal__header">
+      <h1>{entry.data.title}</h1>
+      {
+        entry.data.updatedDate && (
+          <p class="legal__updated">
+            Last updated:{' '}
+            <time datetime={entry.data.updatedDate.toISOString()}>
+              {entry.data.updatedDate.toLocaleDateString('en-BD', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </time>
+          </p>
+        )
+      }
+    </header>
+    <div class="prose-baqc">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal {
+    max-width: 760px;
+    padding-block: 3rem 4rem;
+  }
+  .legal__header {
+    margin-bottom: 2rem;
+  }
+  .legal__updated {
+    margin-top: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import { type GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import EventLayout from '~/layouts/EventLayout.astro';
+import { getAllEvents } from '~/lib/events';
+
+export const getStaticPaths = (async () => {
+  const events = await getAllEvents();
+  return events.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<EventLayout entry={entry}>
+  <Content />
+</EventLayout>

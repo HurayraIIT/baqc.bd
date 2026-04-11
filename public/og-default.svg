@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="BAQC — Bangladesh Aspiring QA Community">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7FAF9"/>
+      <stop offset="1" stop-color="#E6F2EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g transform="translate(80, 80)">
+    <rect width="120" height="120" rx="28" fill="#006A4E"/>
+    <circle cx="56" cy="60" r="38" fill="#F42A41"/>
+  </g>
+  <text x="80" y="320" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="92" font-weight="800" fill="#0E1714" letter-spacing="-2">BAQC</text>
+  <text x="80" y="400" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="42" font-weight="600" fill="#00563E">Bangladesh Aspiring QA Community</text>
+  <text x="80" y="480" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="30" font-weight="400" fill="#5B6663">Learn quality engineering, together.</text>
+  <rect x="80" y="540" width="200" height="6" rx="3" fill="#F42A41"/>
+</svg>

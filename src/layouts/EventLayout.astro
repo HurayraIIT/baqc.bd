@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import JsonLd from '~/components/seo/JsonLd.astro';
+import EventStatusBadge from '~/components/events/EventStatusBadge.astro';
+import { formatEventDate, isUpcoming, type EventEntry } from '~/lib/events';
+import { absoluteUrl } from '~/lib/seo';
+import { SITE_TITLE } from '~/consts';
+
+interface Props {
+  entry: EventEntry;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const upcoming = isUpcoming(entry);
+const url = absoluteUrl(`/events/${entry.id}`);
+
+const eventSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: data.title,
+  description: data.description,
+  startDate: data.startDate.toISOString(),
+  endDate: (data.endDate ?? data.startDate).toISOString(),
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: data.isOnline
+    ? 'https://schema.org/OnlineEventAttendanceMode'
+    : 'https://schema.org/OfflineEventAttendanceMode',
+  location: data.isOnline
+    ? {
+        '@type': 'VirtualLocation',
+        url: data.registrationUrl ?? url,
+      }
+    : {
+        '@type': 'Place',
+        name: data.venue ?? data.location,
+        address: data.location,
+      },
+  organizer: {
+    '@type': 'Organization',
+    name: SITE_TITLE,
+    url: absoluteUrl('/'),
+  },
+  url,
+};
+---
+
+<BaseLayout title={data.title} description={data.description} type="event">
+  <JsonLd slot="head" data={eventSchema} />
+  <article class="event container-x">
+    <header class="event__header">
+      <EventStatusBadge upcoming={upcoming} />
+      <h1>{data.title}</h1>
+      <p class="event__when">
+        <time datetime={data.startDate.toISOString()}>
+          {formatEventDate(data.startDate, data.endDate)}
+        </time>
+      </p>
+      <p class="event__where">
+        {data.isOnline ? 'Online' : data.location}{data.venue && ` — ${data.venue}`}
+      </p>
+      <p class="event__lede">{data.description}</p>
+      {
+        data.registrationUrl && upcoming && (
+          <p class="event__cta">
+            <a class="btn btn-primary" href={data.registrationUrl} rel="noopener" target="_blank">
+              Register / RSVP
+            </a>
+          </p>
+        )
+      }
+    </header>
+
+    {
+      data.cover && data.coverAlt && (
+        <figure class="event__cover">
+          <Image src={data.cover} alt={data.coverAlt} loading="eager" fetchpriority="high" />
+        </figure>
+      )
+    }
+
+    <div class="event__body prose-baqc">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .event {
+    max-width: 800px;
+    padding-block: 3rem 4rem;
+  }
+  .event__header {
+    margin-bottom: 2.5rem;
+  }
+  .event__header h1 {
+    margin-top: 0.75rem;
+  }
+  .event__when {
+    margin: 0.75rem 0 0.25rem;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+  .event__where {
+    margin: 0;
+    color: var(--color-muted);
+  }
+  .event__lede {
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+    color: var(--color-ink-soft);
+    line-height: 1.6;
+  }
+  .event__cta {
+    margin-top: 1.5rem;
+  }
+  .event__cover {
+    margin: 0 0 2.5rem;
+  }
+  .event__cover :global(img) {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    height: auto;
+  }
+</style>

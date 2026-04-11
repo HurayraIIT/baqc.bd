@@ -1,0 +1,53 @@
+---
+import PostCard from '~/components/blog/PostCard.astro';
+import { getPublishedPosts } from '~/lib/blog';
+
+const posts = (await getPublishedPosts()).slice(0, 3);
+---
+
+{
+  posts.length > 0 && (
+    <section class="latest container-x" aria-labelledby="latest-heading">
+      <header class="latest__head">
+        <div>
+          <h2 id="latest-heading">From the blog</h2>
+          <p>Field notes, tutorials, and stories from the community.</p>
+        </div>
+        <a class="btn btn-secondary" href="/blog">
+          All posts
+        </a>
+      </header>
+      <div class="latest__grid">
+        {posts.map((p) => (
+          <PostCard entry={p} />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .latest {
+    padding-block: 3rem 1rem;
+  }
+  .latest__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .latest__head h2 {
+    margin: 0;
+  }
+  .latest__head p {
+    margin: 0.25rem 0 0;
+    color: var(--color-muted);
+  }
+  .latest__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

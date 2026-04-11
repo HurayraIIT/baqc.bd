@@ -1,0 +1,107 @@
+---
+import EventStatusBadge from '~/components/events/EventStatusBadge.astro';
+import { formatEventDate, getNextEvent } from '~/lib/events';
+
+const next = await getNextEvent();
+---
+
+<section class="next-event container-x" aria-labelledby="next-event-heading">
+  <div class="next-event__intro">
+    <h2 id="next-event-heading">What's next</h2>
+    <p>The next BAQC event on the calendar.</p>
+  </div>
+  {
+    next ? (
+      <a class="next-event__card surface" href={`/events/${next.id}`}>
+        <div class="next-event__head">
+          <EventStatusBadge upcoming={true} />
+          <time datetime={next.data.startDate.toISOString()}>
+            {formatEventDate(next.data.startDate, next.data.endDate)}
+          </time>
+        </div>
+        <h3>{next.data.title}</h3>
+        <p class="next-event__where">
+          {next.data.isOnline ? '🌐 Online' : `📍 ${next.data.location}`}
+          {next.data.venue && ` — ${next.data.venue}`}
+        </p>
+        <p class="next-event__desc">{next.data.description}</p>
+        <span class="next-event__cta" aria-hidden="true">
+          See details →
+        </span>
+      </a>
+    ) : (
+      <div class="next-event__empty surface">
+        <p>No upcoming events scheduled right now. Check back soon — we're cooking something up.</p>
+        <a class="btn btn-secondary" href="/events">
+          Browse past events
+        </a>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .next-event {
+    padding-block: 3rem;
+  }
+  .next-event__intro h2 {
+    margin: 0;
+  }
+  .next-event__intro p {
+    margin: 0.25rem 0 1.5rem;
+    color: var(--color-muted);
+  }
+  .next-event__card {
+    display: block;
+    padding: 1.75rem 2rem;
+    text-decoration: none;
+    color: var(--color-ink);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .next-event__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--color-brand-green-200);
+  }
+  .next-event__head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+  .next-event__card h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.5rem;
+  }
+  .next-event__where {
+    margin: 0;
+    color: var(--color-ink-soft);
+  }
+  .next-event__desc {
+    margin: 0.6rem 0 0;
+    color: var(--color-ink-soft);
+  }
+  .next-event__cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--color-brand-green-700);
+    font-weight: 600;
+  }
+  .next-event__empty {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .next-event__empty p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+</style>

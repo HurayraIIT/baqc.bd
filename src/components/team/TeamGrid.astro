@@ -1,0 +1,22 @@
+---
+import MemberCard from './MemberCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  members: CollectionEntry<'team'>[];
+}
+
+const { members } = Astro.props;
+---
+
+<div class="team-grid">
+  {members.map((m) => <MemberCard member={m} />)}
+</div>
+
+<style>
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

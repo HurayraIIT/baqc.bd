@@ -1,0 +1,24 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/home/Hero.astro';
+import NextEventCard from '~/components/home/NextEventCard.astro';
+import LatestPosts from '~/components/home/LatestPosts.astro';
+import JsonLd from '~/components/seo/JsonLd.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SOCIAL_LINKS } from '~/consts';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_TITLE,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  sameAs: Object.values(SOCIAL_LINKS).filter((u) => u && u.length > 0),
+};
+---
+
+<BaseLayout>
+  <JsonLd slot="head" data={orgSchema} />
+  <Hero />
+  <NextEventCard />
+  <LatestPosts />
+</BaseLayout>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "md-shobuj-miah",
+    "name": "Md. Shobuj Miah",
+    "role": "Founder & Organizer",
+    "bio": "Founder of BAQC. Believes the next generation of Bangladeshi QA engineers deserves a community that meets them where they are.",
+    "avatar": "../../assets/brand/icon.png",
+    "avatarAlt": "BAQC logo standing in for Md. Shobuj Miah's portrait",
+    "social": {},
+    "order": 1
+  },
+  {
+    "id": "dummy-1",
+    "name": "[DUMMY] Sample Member One",
+    "role": "Placeholder · Community Lead",
+    "bio": "[DUMMY DATA] This is a placeholder team member used during development. Replace this entry in src/content/team/members.json with a real organizer before launch.",
+    "avatar": "../../assets/team/dummy-avatar.svg",
+    "avatarAlt": "Placeholder avatar — dummy team member",
+    "social": {
+      "website": "https://baqc.bd/contact"
+    },
+    "order": 10
+  },
+  {
+    "id": "dummy-2",
+    "name": "[DUMMY] Sample Member Two",
+    "role": "Placeholder · Workshop Lead",
+    "bio": "[DUMMY DATA] Placeholder bio for layout testing. Real organizers will replace this entry with their own bio, role, and links before the site goes live.",
+    "avatar": "../../assets/team/dummy-avatar.svg",
+    "avatarAlt": "Placeholder avatar — dummy team member",
+    "social": {
+      "website": "https://baqc.bd/contact"
+    },
+    "order": 20
+  },
+  {
+    "id": "dummy-3",
+    "name": "[DUMMY] Sample Member Three",
+    "role": "Placeholder · Content Editor",
+    "bio": "[DUMMY DATA] Sample team member used to verify the team grid layout with realistic data. Not a real person — replace before launch.",
+    "avatar": "../../assets/team/dummy-avatar.svg",
+    "avatarAlt": "Placeholder avatar — dummy team member",
+    "social": {
+      "website": "https://baqc.bd/contact"
+    },
+    "order": 30
+  },
+  {
+    "id": "dummy-4",
+    "name": "[DUMMY] Sample Member Four",
+    "role": "Placeholder · Mentorship Coordinator",
+    "bio": "[DUMMY DATA] This placeholder card exists so the responsive team grid can be tested with five-plus members. Replace this entry with a real volunteer.",
+    "avatar": "../../assets/team/dummy-avatar.svg",
+    "avatarAlt": "Placeholder avatar — dummy team member",
+    "social": {
+      "website": "https://baqc.bd/contact"
+    },
+    "order": 40
+  },
+  {
+    "id": "dummy-5",
+    "name": "[DUMMY] Sample Member Five",
+    "role": "Placeholder · Community Volunteer",
+    "bio": "[DUMMY DATA] Placeholder used during development. Real volunteer profiles replace these entries — see the README for instructions.",
+    "avatar": "../../assets/team/dummy-avatar.svg",
+    "avatarAlt": "Placeholder avatar — dummy team member",
+    "social": {
+      "website": "https://baqc.bd/contact"
+    },
+    "order": 50
+  }
+]

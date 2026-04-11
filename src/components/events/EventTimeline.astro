@@ -1,0 +1,69 @@
+---
+import EventCard from './EventCard.astro';
+import type { EventEntry } from '~/lib/events';
+
+interface Props {
+  upcoming: EventEntry[];
+  past: EventEntry[];
+}
+
+const { upcoming, past } = Astro.props;
+---
+
+<section aria-labelledby="upcoming-heading" class="timeline-section">
+  <h2 id="upcoming-heading">Upcoming</h2>
+  {
+    upcoming.length === 0 ? (
+      <p class="timeline-empty">
+        No events scheduled right now. New ones land here as soon as they're announced — keep an eye
+        on this page or follow us on social.
+      </p>
+    ) : (
+      <div class="timeline-grid">
+        {upcoming.map((entry) => (
+          <EventCard entry={entry} />
+        ))}
+      </div>
+    )
+  }
+</section>
+
+<section aria-labelledby="past-heading" class="timeline-section">
+  <h2 id="past-heading">Past events</h2>
+  {
+    past.length === 0 ? (
+      <p class="timeline-empty">No past events yet — every community starts somewhere.</p>
+    ) : (
+      <div class="timeline-grid">
+        {past.map((entry) => (
+          <EventCard entry={entry} />
+        ))}
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .timeline-section {
+    margin-top: 3rem;
+  }
+  .timeline-section:first-child {
+    margin-top: 0;
+  }
+  .timeline-section h2 {
+    margin: 0 0 1.25rem;
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .timeline-empty {
+    color: var(--color-muted);
+    background: var(--color-paper-soft);
+    border: 1px dashed var(--color-line);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+  }
+</style>

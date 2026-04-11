@@ -1,0 +1,85 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PostCard from '~/components/blog/PostCard.astro';
+import { getPublishedPosts, uniqueTags } from '~/lib/blog';
+
+const posts = await getPublishedPosts();
+const tags = uniqueTags(posts);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Field notes, tutorials, and stories from the BAQC community — written by aspiring QA engineers, for aspiring QA engineers."
+>
+  <section class="blog-index container-x">
+    <header class="blog-index__header">
+      <h1>The BAQC blog</h1>
+      <p class="blog-index__lede">
+        Written by community members. No corporate jargon, no clickbait — just things real testers
+        in Bangladesh have learned and want to share.
+      </p>
+    </header>
+
+    {
+      tags.length > 0 && (
+        <ul class="blog-index__tags" aria-label="Topics">
+          {tags.map((t) => (
+            <li>
+              <span class="badge badge-tag">#{t}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    {
+      posts.length === 0 ? (
+        <p class="blog-index__empty">
+          No posts yet — but the first one lands soon. Want to write one? Reach out via the{' '}
+          <a href="/contact">contact page</a>.
+        </p>
+      ) : (
+        <div class="blog-index__grid">
+          {posts.map((p) => (
+            <PostCard entry={p} />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-index {
+    padding-block: 3rem 4rem;
+  }
+  .blog-index__header {
+    max-width: 60ch;
+    margin-bottom: 1.5rem;
+  }
+  .blog-index__lede {
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    color: var(--color-ink-soft);
+  }
+  .blog-index__tags {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .blog-index__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  .blog-index__empty {
+    color: var(--color-muted);
+    background: var(--color-paper-soft);
+    border: 1px dashed var(--color-line);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+  }
+</style>
