@@ -6,7 +6,9 @@
     "bio": "Founder of BAQC. Believes the next generation of Bangladeshi QA engineers deserves a community that meets them where they are.",
     "avatar": "../../assets/brand/icon.png",
     "avatarAlt": "BAQC logo standing in for Md. Shobuj Miah's portrait",
-    "social": {},
+    "social": {
+      "website": "https://baqc.bd/test"
+    },
     "order": 1
   },
   {
